@@ -2,7 +2,6 @@
 
 import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { createClient } from '@/lib/supabase/client';
 import Image from 'next/image';
 
 export const dynamic = 'force-dynamic';
@@ -30,6 +29,7 @@ function CheckoutContent() {
 
   useEffect(() => {
     const fetchGig = async () => {
+      const { createClient } = await import('@/lib/supabase/client');
       const supabase = createClient();
       if (gigId) {
         const { data } = await supabase
@@ -94,6 +94,7 @@ function CheckoutContent() {
           // Success Callback
           setProcessingState('securing');
           
+          const { createClient } = await import('@/lib/supabase/client');
           const supabase = createClient();
           const { data: { user } } = await supabase.auth.getUser();
 

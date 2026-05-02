@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { createClient } from '@/lib/supabase/client';
 
 export const dynamic = 'force-dynamic';
 
@@ -29,6 +28,7 @@ export default function DashboardPage() {
 
   useEffect(() => {
     const fetchData = async () => {
+      const { createClient } = await import('@/lib/supabase/client');
       const supabase = createClient();
 
       // Get current user
@@ -69,6 +69,7 @@ export default function DashboardPage() {
   }, []);
 
   const handleLogout = async () => {
+    const { createClient } = await import('@/lib/supabase/client');
     const supabase = createClient();
     await supabase.auth.signOut();
     router.push('/');

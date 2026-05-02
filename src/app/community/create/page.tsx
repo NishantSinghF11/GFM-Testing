@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import { useRouter } from 'next/navigation';
-import { createClient } from '@/lib/supabase/client';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 
 export const dynamic = 'force-dynamic';
@@ -18,9 +17,10 @@ export default function CreateThreadPage() {
     e.preventDefault();
     setSubmitting(true);
 
-    const supabase = createClient();
-
     try {
+      const { createClient } = await import('@/lib/supabase/client');
+      const supabase = createClient();
+
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) {
         alert('Please login to start a discussion.');
