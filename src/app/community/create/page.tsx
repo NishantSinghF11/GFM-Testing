@@ -13,11 +13,12 @@ export default function CreateThreadPage() {
   const [category, setCategory] = useState('general');
   const [submitting, setSubmitting] = useState(false);
   const router = useRouter();
-  const supabase = createClient();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
+
+    const supabase = createClient();
 
     try {
       const { data: { user } } = await supabase.auth.getUser();
