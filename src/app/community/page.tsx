@@ -4,7 +4,7 @@ import { createClient } from '@/lib/supabase/server';
 import CommunityFeed from './components/CommunityFeed';
 import TrendingSidebar from './components/TrendingSidebar';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
-
+export const dynamic = "force-dynamic";
 interface CommunityPageProps {
   searchParams: Promise<any>;
 }
