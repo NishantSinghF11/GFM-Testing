@@ -209,7 +209,7 @@ export default function DashboardPage() {
             <GfmVault 
               isOpen={true} 
               onClose={() => setActiveTab('home')} 
-              currentUser={{ name: displayName, initials }}
+              currentUser={{ id: user.id, name: displayName, initials, role: isCreator ? 'creator' : 'client' }}
               addToast={() => {}}
             />
           </div>

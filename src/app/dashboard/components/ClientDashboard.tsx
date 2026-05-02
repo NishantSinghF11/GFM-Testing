@@ -8,7 +8,7 @@ interface ClientDashboardProps {
 }
 
 export default function ClientDashboard({ orders, user, profile }: ClientDashboardProps) {
-  const [activeTab, setActiveTab] = useState<'overview' | 'projects' | 'hiring' | 'approvals'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'projects' | 'tenders' | 'hiring' | 'approvals'>('overview');
 
   const pendingApprovals = orders.filter(o => o.status === 'delivered');
   const activeProjects = orders.filter(o => o.status === 'in_progress' || o.status === 'pending');

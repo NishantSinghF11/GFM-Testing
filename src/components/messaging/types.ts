@@ -37,6 +37,8 @@ export interface Conversation {
 export interface CurrentUser {
   id: string;
   email?: string;
+  name?: string;
+  initials?: string;
   full_name?: string;
   avatar_url?: string;
   role?: 'client' | 'creator';

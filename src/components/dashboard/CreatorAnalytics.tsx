@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useMemo } from 'react';
-import { Conversation } from './types';
+import type { Conversation } from '@/components/messaging/types';
 
 interface CreatorAnalyticsProps {
   conversations?: Conversation[];

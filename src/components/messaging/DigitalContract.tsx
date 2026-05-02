@@ -14,7 +14,7 @@ export default function DigitalContract({ isOpen, onClose, currentUser, offerDat
   if (!isOpen) return null;
 
   // Mock data if none provided (for demo)
-  const data = offerData || {
+  const defaultData = {
     price: '$500',
     timeline: '5 Days',
     deliverables: [
@@ -25,6 +25,13 @@ export default function DigitalContract({ isOpen, onClose, currentUser, offerDat
     ],
     revisions: 3,
     id: 'GFM-X82-K91-Z'
+  };
+  const data = {
+    ...defaultData,
+    ...offerData,
+    deliverables: offerData?.title ? [offerData.title] : defaultData.deliverables,
+    revisions: Number(offerData?.revisions ?? defaultData.revisions),
+    id: defaultData.id
   };
 
   const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });

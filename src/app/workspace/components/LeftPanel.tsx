@@ -233,7 +233,7 @@ export default function LeftPanel({
                 
                 return (
                   <div key={f.id} onClick={() => setSelectedFile(f)} style={{
-                    display: 'flex', alignItems: 'center', gap: '10px', padding: '11px', borderRadius: '8px', cursor: 'pointer',
+                    display: 'flex', alignItems: 'center', gap: '10px', borderRadius: '8px', cursor: 'pointer',
                     background: isActive ? 'rgba(99,102,241,0.1)' : 'rgba(255,255,255,0.02)',
                     border: `1px solid ${isActive ? 'rgba(99,102,241,0.4)' : 'transparent'}`,
                     transition: 'all 0.35s cubic-bezier(0.4, 0, 0.2, 1)',

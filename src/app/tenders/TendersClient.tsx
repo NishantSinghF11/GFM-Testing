@@ -3,9 +3,10 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import FlashTenders from '@/components/tenders/FlashTenders';
+import type { Tender } from '@/lib/tenders';
 
 interface TendersClientProps {
-  initialTenders: any[];
+  initialTenders: Tender[];
 }
 
 export default function TendersClient({ initialTenders }: TendersClientProps) {

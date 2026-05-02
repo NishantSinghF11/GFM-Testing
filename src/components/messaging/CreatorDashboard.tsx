@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from 'react';
+import Link from 'next/link';
 import { DashboardProps } from './types';
 import OfferCountdown from '@/components/ui/OfferCountdown';
 import NotificationCenter from '@/components/ui/NotificationCenter';
@@ -278,7 +279,7 @@ export default function CreatorDashboard({
                         {isMe ? (
                           <>
                             <button onClick={() => addToast('Offer withdrawn', 'fa-trash-can')} style={{ flex: 1, background: 'transparent', color: '#9CA3AF', border: '1px solid #374151', padding: '10px', borderRadius: '8px', fontSize: '0.85rem' }}>Withdraw</button>
-                            <button onClick={() => { setOfferPrice(msg.meta?.price); setShowOfferComposer(true); }} style={{ flex: 1, background: 'rgba(99,102,241,0.1)', color: '#818cf8', border: 'none', padding: '10px', borderRadius: '8px', fontSize: '0.85rem' }}>Edit Terms</button>
+                            <button onClick={() => { setOfferPrice(msg.meta?.price || offerPrice); setShowOfferComposer(true); }} style={{ flex: 1, background: 'rgba(99,102,241,0.1)', color: '#818cf8', border: 'none', padding: '10px', borderRadius: '8px', fontSize: '0.85rem' }}>Edit Terms</button>
                           </>
                         ) : (
                           <>

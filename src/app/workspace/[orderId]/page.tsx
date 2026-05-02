@@ -113,7 +113,7 @@ export default function WorkspacePage({ params }: { params: Promise<{ orderId: s
         setComments(prev => [...prev, newComment]);
       })
       .on('postgres_changes', { event: 'UPDATE', schema: 'public', table: 'orders', filter: `id=eq.${orderId}` }, (payload) => {
-        setOrder(prev => ({ ...prev, ...payload.new }));
+        setOrder((prev: any) => ({ ...prev, ...payload.new }));
       })
       .on('broadcast', { event: 'sync_state' }, ({ payload }) => {
         // System 16.5 Sync Listener

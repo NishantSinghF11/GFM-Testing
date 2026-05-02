@@ -24,7 +24,7 @@ export default function ShadowDraftViewer() {
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 280px', gap: '30px' }}>
         {/* Main Player Area */}
-        <div style={{ position: 'relative', borderRadius: '20px', overflow: 'hidden', aspectRation: '16/9', background: '#000', border: '1px solid rgba(255,255,255,0.05)' }}>
+        <div style={{ position: 'relative', borderRadius: '20px', overflow: 'hidden', aspectRatio: '16/9', background: '#000', border: '1px solid rgba(255,255,255,0.05)' }}>
           {/* Mock Video Placeholder */}
           <div style={{ width: '100%', height: '350px', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
             <div style={{ textAlign: 'center', zIndex: 1 }}>

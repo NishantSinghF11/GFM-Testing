@@ -13,7 +13,7 @@ interface CreatorDashboardProps {
 }
 
 export default function CreatorDashboard({ orders, user, profile, gigs }: CreatorDashboardProps) {
-  const [activeTab, setActiveTab] = useState<'workload' | 'earnings' | 'gigs' | 'inbox'>('workload');
+  const [activeTab, setActiveTab] = useState<'workload' | 'opportunities' | 'earnings' | 'gigs' | 'inbox'>('workload');
 
   const pendingOrders = orders.filter(o => o.status === 'pending');
   const inProgressOrders = orders.filter(o => o.status === 'in_progress');

@@ -156,12 +156,12 @@ function MessagesContent() {
           (msg.sender_id === currentUser.id && msg.receiver_id === activeConversation.user_id) ||
           (msg.sender_id === activeConversation.user_id && msg.receiver_id === currentUser.id)
         ) {
-          let processed = { ...msg, type: 'text' };
+          let processed: Message = { ...msg, type: 'text' } as Message;
           if (msg.content && (msg.content.includes('smart_offer') || msg.content.includes('"type":"smart_offer"'))) {
             try {
               const str = msg.content.substring(msg.content.indexOf('{'), msg.content.lastIndexOf('}') + 1);
               const parsed = JSON.parse(str);
-              processed = { ...msg, type: 'smart_offer', meta: parsed.meta, content: '' };
+              processed = { ...msg, type: 'smart_offer', meta: parsed.meta, content: '' } as Message;
             } catch(e) {}
           }
           setMessages(prev => {
@@ -277,4 +277,3 @@ export default function MessagesPage() {
     </Suspense>
   );
 }
-

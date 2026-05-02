@@ -158,13 +158,8 @@ export default function MainCanvas({
     } else {
       // For shapes, we clear and redraw (or use a temp layer)
       // For now, let's just do brush to keep it simple and add shapes in next step if needed
-      // Actually, let's implement shapes properly by clearing only when drawing shapes
-      if (annotationTool !== 'brush') {
-        // This would require storing the full canvas state or using a second canvas
-        // Let's stick to Brush for first iteration to ensure stability
-        ctx.lineTo(x, y);
-        ctx.stroke();
-      }
+      ctx.lineTo(x, y);
+      ctx.stroke();
     }
   };
 

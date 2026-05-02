@@ -222,7 +222,7 @@ export default function ClientDashboard({
                         {!isMe && (
                           <>
                             <button onClick={() => setShowOfferComposer(true)} style={{ flex: 1, background: 'rgba(255,255,255,0.05)', color: 'white', border: '1px solid #374151', padding: '10px', borderRadius: '8px', cursor: 'pointer' }}>Counter Offer</button>
-                            <button onClick={() => { setSelectedOfferForCheckout(msg.meta); setShowCheckoutPreview(true); }} style={{ flex: 1, background: '#10b981', color: 'white', border: 'none', padding: '10px', borderRadius: '8px', fontWeight: 700, cursor: 'pointer' }}>Accept & Fund</button>
+                            <button onClick={() => { if (!msg.meta) return; setSelectedOfferForCheckout(msg.meta); setShowCheckoutPreview(true); }} style={{ flex: 1, background: '#10b981', color: 'white', border: 'none', padding: '10px', borderRadius: '8px', fontWeight: 700, cursor: 'pointer' }}>Accept & Fund</button>
                           </>
                         )}
                       </div>

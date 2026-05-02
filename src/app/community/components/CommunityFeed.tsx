@@ -13,6 +13,7 @@ interface Thread {
   upvotes: number;
   downvotes: number;
   comment_count: number;
+  views?: number;
   created_at: string;
   author: {
     name: string;
