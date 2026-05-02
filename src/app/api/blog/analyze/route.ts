@@ -13,7 +13,7 @@ export async function POST(req: Request) {
     // placeholder for real LLM integration (Gemini / OpenAI)
     // For now, we simulate a "Neural Analysis" based on content keywords
     const keywords: string[] = content.toLowerCase().match(/\b(\w{5,})\b/g) || [];
-    const uniqueKeywords = Array.from(new Set(keywords)).slice(0, 10);
+    const uniqueKeywords: string[] = Array.from(new Set<string>(keywords)).slice(0, 10);
     
     // Simulate smart logic
     const suggestions = {
