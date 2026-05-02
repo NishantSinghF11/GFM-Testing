@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 
+export const dynamic = 'force-dynamic';
+
 export default function CreateThreadPage() {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');

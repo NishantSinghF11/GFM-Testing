@@ -5,6 +5,8 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import Image from 'next/image';
 
+export const dynamic = 'force-dynamic';
+
 function CheckoutContent() {
   const router = useRouter();
   const searchParams = useSearchParams();

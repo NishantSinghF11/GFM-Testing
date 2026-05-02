@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 
+export const dynamic = 'force-dynamic';
+
 import ClientDashboard from './components/ClientDashboard';
 import CreatorDashboard from './components/CreatorDashboard';
 import MarketTicker from '@/components/dashboard/MarketTicker';
